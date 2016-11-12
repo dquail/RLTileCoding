@@ -1,16 +1,30 @@
 from pylab import zeros, sin, cos, normal, random
-from TilecoderSolution import numTilings, tilecode
+from Tilecoder import numTilings, tilecode
 
-n =
-theta =     # initialize weights appropriately here
-alpha =     # initialize step size parameter appropriately here
-indices =   # initialize your list of tile indices here
+#n =
+# initialize weights appropriately here
+theta =     [0.0]*968
+alpha =     0.1 / 8# initialize step size parameter appropriately here
+indices = [-1]*numTilings # initialize your list of tile indices here
 
 def f(in1,in2):
     # write your linear function approximator here (5 lines or so)
+    indices = [-1]*numTilings # initialize your list of tile indices here
+    tilecode(in1,in2,indices)
+    rValue = 0
+    for indicie in indices:
+        rValue+=theta[indicie]
+        
+    return rValue
+        
     
 def learn(in1,in2,target):
     # write your gradient descent learning algorithm here (3 lines or so)
+    indices = [-1]*numTilings # initialize your list of tile indices here
+    tilecode(in1,in2,indices)
+    estimate = f(in1, in2)
+    for indicie in indices:
+        theta[indicie]+= alpha * (target - estimate) 
 
 def test1():
    for in1,in2,target in \
@@ -63,5 +77,6 @@ def test2():
         MSE(10000)
     writeF('f10000')
 
-test1()
+# test1()
+test2()
 

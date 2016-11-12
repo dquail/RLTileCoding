@@ -9,16 +9,12 @@ def tilecode(in1,in2,tileIndices):
     # write your tilecoder here (5 lines or so)
 
     for tiling in range(numTilings):
-        print("Passing through tiling: " + str(tiling))
         x = int(in1/tileSize)
         y = int(in2/tileSize)
         index = (y*tilesPerTiling + x) + tiling*tilesPerTiling*tilesPerTiling
         tileIndices[tiling] = index
         in1+=tilingOffset
         in2+=tilingOffset
-        print(index)
-        
-    
     
 def printTileCoderIndices(in1,in2):
     tileIndices = [-1]*numTilings
