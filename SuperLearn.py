@@ -5,14 +5,14 @@ from Tilecoder import numTilings, tilecode
 # initialize weights appropriately here
 theta =     [0.0]*968
 alpha =     0.1 / 8# initialize step size parameter appropriately here
-indices = [-1]*numTilings # initialize your list of tile indices here
+tileIndices = [-1]*numTilings # initialize your list of tile indices here
 
 def f(in1,in2):
     # write your linear function approximator here (5 lines or so)
-    indices = [-1]*numTilings # initialize your list of tile indices here
-    tilecode(in1,in2,indices)
+    tileIndices = [-1]*numTilings # initialize your list of tile indices here
+    tilecode(in1,in2,tileIndices)
     rValue = 0
-    for indicie in indices:
+    for indicie in tileIndices:
         rValue+=theta[indicie]
         
     return rValue
@@ -20,10 +20,10 @@ def f(in1,in2):
     
 def learn(in1,in2,target):
     # write your gradient descent learning algorithm here (3 lines or so)
-    indices = [-1]*numTilings # initialize your list of tile indices here
-    tilecode(in1,in2,indices)
+    tileIndices = [-1]*numTilings # initialize your list of tile indices here
+    tilecode(in1,in2,tileIndices)
     estimate = f(in1, in2)
-    for indicie in indices:
+    for indicie in tileIndices:
         theta[indicie]+= alpha * (target - estimate)
         
 def test1():
