@@ -26,20 +26,6 @@ def learn(in1,in2,target):
     for indicie in tileIndices:
         theta[indicie]+= alpha * (target - estimate)
         
-def test1():
-   for in1, in2, target in \
-         [ (0.1, 0.1, 3.0), \
-           (4.0, 2.0, -1.0), \
-           (5.99, 5.99, 2.0), \
-           (4.0, 2.1, -1.0) ]:
-        before = f(in1, in2)
-        learn(in1,in2, target)
-        after = f(in1, in2)
-        """
-        print('Example (', in1, ',', in2, ',', target, '):', end=' ') 
-        print('    f before learning: ', before, end=' ') 
-        print('    f after learning : ', after)
-        """
     
 def targetFunction(in1, in2):
     return sin(in1 - 3.0) * cos(in2) + normal(0, 0.1)
