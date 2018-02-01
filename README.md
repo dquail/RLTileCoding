@@ -1,14 +1,14 @@
 # Supervised learning using Tile coding
 
-##Problem Description
+## Problem Description
 Consider the problem of attempting to predict what output you'd expect given a specific input. 
 
-##Solution
+## Solution
 If you knew the function used to derive the output, this would be simple. When training examples exist (inputs mapped to outputs), supervised learning techniques are able to solve this problem fairly easily.  
 
 In this example, we'll use tile coding to estimate a function (a sine function sin(in1 - 3.0) * cos(in2) + normal(0, 0.1)) after building our own training set.
 
-##Usage
+## Usage
 There are 2 main files:
 
 1. [Tilecoder.py](Tilecoder.py)
@@ -28,10 +28,10 @@ writeF("testdata.dat")
 python3 plot.py testdata.dat
 ```
 
-##Results
+## Results
 The following is the graph of the function learned.
 
 ![alt text](Plot10000.png "Function approximation")
 
-##Reference
+## Reference
 This is an adaption of a programming assignment from CMPUT 609 taught by Rich Sutton at the University of Alberta in 2016
